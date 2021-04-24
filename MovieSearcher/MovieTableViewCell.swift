@@ -8,6 +8,10 @@
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
+    
+    @IBOutlet var movieTitleLabel : UILabel!
+    @IBOutlet var movieYearLabel : UILabel!
+    @IBOutlet var moviePosterImageView : UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,6 +22,22 @@ class MovieTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    static let identifier = "MovieTableViewCell"
+    
+    static func nib() -> UINib {
+        return UINib(nibName: "MovieTableViewCell", bundle: nil)
+    }
+    
+    func configure(with model : Movie){
+        self.movieYearLabel.text = model.Year
+        self.movieTitleLabel.text = model.Title
+        let url = model.Poster
+        if let data = try? Data(contentsOf: URL(string: url)!){
+            self.moviePosterImageView.image = UIImage(data: data)
+        }
+        
     }
     
 }

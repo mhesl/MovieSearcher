@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
     
@@ -82,6 +83,9 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let url = "https://www.imdb.com/title/\(movies[indexPath.row].imdbID)/"
+        let vc = SFSafariViewController(url: URL(string: url)!)
+        present(vc, animated: true)
     }
 
 

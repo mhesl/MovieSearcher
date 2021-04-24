@@ -13,6 +13,8 @@
 		0478D4722633F15400DB9099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0478D4702633F15400DB9099 /* Main.storyboard */; };
 		0478D4742633F15500DB9099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0478D4732633F15500DB9099 /* Assets.xcassets */; };
 		0478D4772633F15500DB9099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0478D4752633F15500DB9099 /* LaunchScreen.storyboard */; };
+		0478D48126343D3A00DB9099 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478D47F26343D3A00DB9099 /* MovieTableViewCell.swift */; };
+		0478D48226343D3A00DB9099 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478D48026343D3A00DB9099 /* MovieTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0478D4732633F15500DB9099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0478D4762633F15500DB9099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0478D4782633F15500DB9099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0478D47F26343D3A00DB9099 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		0478D48026343D3A00DB9099 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				0478D46A2633F15400DB9099 /* AppDelegate.swift */,
 				0478D46C2633F15400DB9099 /* SceneDelegate.swift */,
 				0478D46E2633F15400DB9099 /* ViewController.swift */,
+				0478D47F26343D3A00DB9099 /* MovieTableViewCell.swift */,
+				0478D48026343D3A00DB9099 /* MovieTableViewCell.xib */,
 				0478D4702633F15400DB9099 /* Main.storyboard */,
 				0478D4732633F15500DB9099 /* Assets.xcassets */,
 				0478D4752633F15500DB9099 /* LaunchScreen.storyboard */,
@@ -126,6 +132,7 @@
 			files = (
 				0478D4772633F15500DB9099 /* LaunchScreen.storyboard in Resources */,
 				0478D4742633F15500DB9099 /* Assets.xcassets in Resources */,
+				0478D48226343D3A00DB9099 /* MovieTableViewCell.xib in Resources */,
 				0478D4722633F15400DB9099 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +146,7 @@
 			files = (
 				0478D46F2633F15400DB9099 /* ViewController.swift in Sources */,
 				0478D46B2633F15400DB9099 /* AppDelegate.swift in Sources */,
+				0478D48126343D3A00DB9099 /* MovieTableViewCell.swift in Sources */,
 				0478D46D2633F15400DB9099 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

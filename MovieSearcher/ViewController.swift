@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import Alamofire
 
 class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
     
@@ -39,34 +40,50 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         }
         
         self.movies.removeAll()
-        
-        URLSession.shared.dataTask(with: URL(string: "https://www.omdbapi.com/?apikey=3ef10bdd&s=\(text)&type=movie")! , completionHandler: {data, response, error in
+        AF.request("https://www.omdbapi.com/?apikey=3ef10bdd&s=\(text)&type=movie").responseDecodable(of: MovieResult.self) { response in
             
-            guard let data = data, error == nil else {
-                return
-            }
-            var result : MovieResult?
-            
-            do {
-                result = try JSONDecoder().decode(MovieResult.self, from: data)
-                
-            } catch {
-                print("An error occurred")
-            }
-            
-            guard let finalResult = result else {
+            guard let data = response.value else {
                 return
             }
             
+            let resultMovies = data.Search
             
-            let resultMovies = finalResult.Search
             self.movies.append(contentsOf: resultMovies)
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
             
-        }).resume()
+            
+        }
+        
+//        URLSession.shared.dataTask(with: URL(string: "https://www.omdbapi.com/?apikey=3ef10bdd&s=\(text)&type=movie")! , completionHandler: {data, response, error in
+//
+//            guard let data = data, error == nil else {
+//                return
+//            }
+//            var result : MovieResult?
+//
+//            do {
+//                result = try JSONDecoder().decode(MovieResult.self, from: data)
+//
+//            } catch {
+//                print("An error occurred")
+//            }
+//
+//            guard let finalResult = result else {
+//                return
+//            }
+//
+//
+//            let resultMovies = finalResult.Search
+//            self.movies.append(contentsOf: resultMovies)
+//
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//
+//        }).resume()
     }
     
     

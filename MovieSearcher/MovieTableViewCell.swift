@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MovieTableViewCell: UITableViewCell {
     
@@ -34,9 +35,21 @@ class MovieTableViewCell: UITableViewCell {
         self.movieYearLabel.text = model.Year
         self.movieTitleLabel.text = model.Title
         let url = model.Poster
-        if let data = try? Data(contentsOf: URL(string: url)!){
-            self.moviePosterImageView.image = UIImage(data: data)
+        
+        AF.request(url , method: .get).response { response in
+            if let data = response.value {
+                self.moviePosterImageView.image = UIImage(data: data!)
+            } else {
+                print("error")
+            }
         }
+        
+//        DispatchQueue.main.async {
+//            if let data = try? Data(contentsOf: URL(string: url)!){
+//                self.moviePosterImageView.image = UIImage(data: data)
+//            }
+//        }
+        
         
     }
     
